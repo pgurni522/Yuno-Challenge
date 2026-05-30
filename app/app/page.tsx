@@ -1,16 +1,10 @@
-import { readFileSync } from "fs";
-import { join } from "path";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import PrintButton from "./PrintButton";
-
-function getContent(): string {
-  const filePath = join(process.cwd(), "HealthHub_Deal_Strategy_Proposal.md");
-  return readFileSync(filePath, "utf-8");
-}
+import { PROPOSAL_CONTENT } from "./content";
 
 export default function Home() {
-  const content = getContent();
+  const content = PROPOSAL_CONTENT;
 
   return (
     <div className="page-wrapper min-h-screen bg-[#e8e8e8] py-10 px-4">
